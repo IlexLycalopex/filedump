@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamie Watts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #e8e6e0;
+      --title: #32292f;
+      --text: #302a06;
+      --text-muted: #302a0699;
+      --border: #302a0620;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.6;
+    }
+
+    /* Layout */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px 0 0;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .site-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .nav-link {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--title);
+      border-color: var(--title);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 0;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.15s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Aileron', 'Fira Code', sans-serif;
+      font-size: clamp(64px, 10vw, 140px);
+      font-weight: 700;
+      line-height: 0.92;
+      color: var(--title);
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+
+    /* Aileron fallback via Google Fonts alternative */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+    .hero-name {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .hero-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.35s forwards;
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.45s forwards;
+    }
+
+    .hero-role {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .hero-role span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .hero-statement {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.9;
+      grid-column: 2 / 4;
+    }
+
+
+
+    /* Footer strip */
+    .footer-strip {
+      margin-top: 80px;
+      padding: 32px 0 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.75s forwards;
+    }
+
+    .footer-left {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--title);
+      border-color: var(--title);
+    }
+
+    /* Arrow motif */
+    .arrow {
+      display: inline-block;
+      color: var(--title);
+      font-size: 32px;
+      line-height: 1;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+
+    .arrow:hover {
+      transform: rotate(45deg);
+    }
+
+    /* Ticker bar */
+    .ticker {
+      margin-top: 60px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.55s forwards;
+    }
+
+    .ticker-inner {
+      display: flex;
+      gap: 64px;
+      white-space: nowrap;
+      animation: ticker 20s linear infinite;
+    }
+
+    .ticker-item {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .ticker-item .dot {
+      color: var(--title);
+      margin-right: 32px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page { padding: 0 24px; }
+      .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
+      .hero-statement { grid-column: 1; }
+
+      .footer-strip { flex-direction: column; gap: 24px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <span class="site-label">jamie-watts.co.uk</span>
+      <a href="https://www.linkedin.com/in/-jamie-watts-/" class="nav-link" target="_blank">LinkedIn ↗</a>
+    </header>
+
+    <section class="hero">
+      <p class="hero-eyebrow">Managing Director &middot; ERP &amp; Technology</p>
+
+      <h1 class="hero-name">Jamie<br>Watts</h1>
+
+      <div class="hero-divider"></div>
+
+      <div class="hero-bottom">
+        <div class="hero-role">
+          <span>Currently</span>
+          MD, Mysoft Ltd<br>
+          Leading UK Sage Partner
+        </div>
+        <p class="hero-statement">
+          Helping manufacturers, distributors and finance teams get more from their ERP.
+          Building the tools, teams and processes that make transformation stick.
+        </p>
+      </div>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span class="ticker-item"><span class="dot">&#9632;</span> Sage X3</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Sage Intacct</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> ERP Strategy</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Finance Transformation</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Manufacturing &amp; Distribution</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Professional Services</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Sage X3</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Sage Intacct</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> ERP Strategy</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Finance Transformation</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Manufacturing &amp; Distribution</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> Professional Services</span>
+      </div>
+    </div>
+
+
+
+    <footer class="footer-strip">
+      <span class="footer-left">&copy; 2026 Jamie Watts</span>
+      <div class="footer-links">
+        <a href="https://mysoftx3.com" target="_blank">Mysoft</a>
+        <a href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
