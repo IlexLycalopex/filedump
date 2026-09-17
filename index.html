@@ -972,6 +972,17 @@
        fingerprinting, no cross-site tracking. No consent banner is required,
        which is why this is used in preference to GA4 on this domain.
 
+       ACTIVE ROUTE: A (automatic injection), enabled 17 September 2026.
+       The manual snippet at the foot of this block is therefore intentionally
+       left commented out. Do not uncomment it while Route A is on, or page
+       views will be counted twice.
+
+       IF ANALYTICS EVER GO QUIET, check this first: automatic injection only
+       happens while the domain is proxied through Cloudflare. If the DNS
+       record is switched to DNS-only (grey cloud), or the site moves off
+       Cloudflare, injection stops silently and no error is raised. The fix is
+       to switch to Route B below.
+
        TWO WAYS TO ENABLE. Pick one, not both, or page views are counted twice.
 
        A) AUTOMATIC (no code). Only works while the domain is proxied through
