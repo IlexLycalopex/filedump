@@ -29,6 +29,41 @@
     3. Update the role line in the hero and in the About meta list.
     4. Update privacy.html if the outbound destination changes.
 
+  LINK REGISTER  (every outbound destination, and whether it is confirmed)
+  ----------------------------------------------------------------------
+  All outbound links carry utm_source / utm_medium / utm_campaign plus a
+  utm_content unique to the slot, so each placement is measurable separately
+  at the destination. Verify a path before adding or changing one: search
+  engine results for this site have proven stale, and a silent 404 on a CTA
+  costs a lead. Confirmed by Jamie 17 Sep 2026 unless marked otherwise.
+
+    CONFIRMED
+      /solutions/                       hero-primary, res-compare
+                                        (Sage X3 vs Intacct comparison)
+      /events-webinars                  pov-events, res-webinars
+                                        (events and webinars are one page now)
+      /our-story/customers/             res-customers
+      /cxo-hub/content-hub/             res-content
+
+    RETIRED, DO NOT REINSTATE
+      /industry-hub/                    tile removed, page no longer exists
+      /sage-intacct-vs-sage-x3/         404, superseded by /solutions/
+      /events/, /webinars/              superseded by /events-webinars
+      /customers/                       superseded by /our-story/customers/
+      /content-hub/                     superseded by /cxo-hub/content-hub/
+
+    NOT YET VERIFIED  (check these before trusting them)
+      /                                 about-body, about-meta, footer-home
+      /contact-us/                      nav, hero-secondary, cta-band-primary,
+                                        footer-contact  <- highest value, check first
+      /what-we-do/sage-x3/              focus-x3, footer-x3
+      /what-we-do/sage-intacct-solution/ focus-intacct, footer-intacct
+      /what-we-do/x3clouddocs/          focus-x3clouddocs, footer-x3cd
+      /whitepapers-guides/              pov-guides
+      /who-we-are/                      res-about
+                                        (suspect this is now /our-story/,
+                                         given customers moved under it)
+
   ANALYTICS
   ---------
   Cloudflare Web Analytics. Cookieless, no personal data, no consent banner
@@ -423,6 +458,9 @@
       transition: background 0.3s ease;
     }
     .res:hover { background: #ded9d0; }
+    /* Keeps the grid tidy when the tile count is odd: the orphan spans the row
+       rather than leaving a visible gap. Safe to leave in at any count. */
+    .res-grid .res:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .res-kind { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); }
     .res-title {
       font-family: 'DM Sans', sans-serif;
@@ -618,7 +656,7 @@
 
       <!-- SWAPPABLE · primary outbound CTAs -->
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://www.mysoftx3.com/sage-intacct-vs-sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-primary" rel="noopener">Sage Intacct or Sage X3 <span class="a">&#8599;</span></a>
+        <a class="btn btn-primary" href="https://www.mysoftx3.com/solutions/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-primary" rel="noopener">Sage Intacct or Sage X3 <span class="a">&#8599;</span></a>
         <a class="btn" href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-secondary" rel="noopener">Book a conversation <span class="a">&#8599;</span></a>
       </div>
       <!-- END SWAPPABLE · primary outbound CTAs -->
@@ -771,7 +809,7 @@
       <!-- SWAPPABLE · outbound CTAs only. The prose above is permanent. -->
       <div class="hero-actions" style="animation: none; opacity: 1;">
         <a class="btn" href="https://www.mysoftx3.com/whitepapers-guides/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-guides" rel="noopener">Whitepapers &amp; guides <span class="a">&#8599;</span></a>
-        <a class="btn" href="https://www.mysoftx3.com/events/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-events" rel="noopener">Upcoming events <span class="a">&#8599;</span></a>
+        <a class="btn" href="https://www.mysoftx3.com/events-webinars?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-events" rel="noopener">Events &amp; webinars <span class="a">&#8599;</span></a>
       </div>
       <!-- END SWAPPABLE · outbound CTAs -->
     </section>
@@ -788,31 +826,25 @@
 
       <div class="res-grid">
 
-        <a class="res" href="https://www.mysoftx3.com/sage-intacct-vs-sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-compare" rel="noopener">
+        <a class="res" href="https://www.mysoftx3.com/solutions/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-compare" rel="noopener">
           <span class="res-kind">Comparison</span>
           <span class="res-title">Sage Intacct vs Sage X3 <span class="a">&#8599;</span></span>
           <span class="res-desc">The question I am asked most. Where each one fits, what it costs, and how to choose without a twelve-month evaluation.</span>
         </a>
 
-        <a class="res" href="https://www.mysoftx3.com/webinars/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-webinars" rel="noopener">
+        <a class="res" href="https://www.mysoftx3.com/events-webinars?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-webinars" rel="noopener">
           <span class="res-kind">On demand</span>
-          <span class="res-title">Webinars &amp; demos <span class="a">&#8599;</span></span>
+          <span class="res-title">Live &amp; on-demand demos <span class="a">&#8599;</span></span>
           <span class="res-desc">Short, practical sessions run by our consultants. Watch a real system before you speak to anyone.</span>
         </a>
 
-        <a class="res" href="https://www.mysoftx3.com/customers/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-customers" rel="noopener">
+        <a class="res" href="https://www.mysoftx3.com/our-story/customers/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-customers" rel="noopener">
           <span class="res-kind">Evidence</span>
           <span class="res-title">Customer stories <span class="a">&#8599;</span></span>
           <span class="res-desc">Businesses across the UK, US and Canada that made the change, and what it did for them.</span>
         </a>
 
-        <a class="res" href="https://www.mysoftx3.com/industry-hub/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-industry" rel="noopener">
-          <span class="res-kind">By sector</span>
-          <span class="res-title">Industry hub <span class="a">&#8599;</span></span>
-          <span class="res-desc">Manufacturing, distribution, financial services, professional services, non-profit and legal.</span>
-        </a>
-
-        <a class="res" href="https://www.mysoftx3.com/content-hub/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-content" rel="noopener">
+        <a class="res" href="https://www.mysoftx3.com/cxo-hub/content-hub/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-content" rel="noopener">
           <span class="res-kind">Reading</span>
           <span class="res-title">Content hub <span class="a">&#8599;</span></span>
           <span class="res-desc">Articles on ERP selection, finance automation and getting more out of a system you already own.</span>
