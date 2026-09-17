@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jamie Watts</title>
+
+  <title>Jamie Watts | Managing Director, Mysoft | Sage X3 &amp; Sage Intacct</title>
+  <meta name="description" content="Jamie Watts is Managing Director of Mysoft, a leading UK Sage partner for Sage X3 and Sage Intacct. Notes on ERP selection, finance transformation and the cost of standing still.">
+  <link rel="canonical" href="https://www.jamie-watts.com/">
+  <meta name="author" content="Jamie Watts">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#e8e6e0">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Jamie Watts">
+  <meta property="og:title" content="Jamie Watts | Managing Director, Mysoft">
+  <meta property="og:description" content="Managing Director of Mysoft, a leading UK Sage partner. Sage X3 for manufacturing and distribution, Sage Intacct for finance and professional services.">
+  <meta property="og:url" content="https://www.jamie-watts.com/">
+  <meta property="og:locale" content="en_GB">
+  <meta property="profile:first_name" content="Jamie">
+  <meta property="profile:last_name" content="Watts">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jamie Watts | Managing Director, Mysoft">
+  <meta name="twitter:description" content="Sage X3 and Sage Intacct for UK and North American finance leaders.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e8e6e0'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%2332292f'/%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap');
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Structured data: ties this page to the Mysoft entity for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jamie Watts",
+    "url": "https://www.jamie-watts.com/",
+    "jobTitle": "Managing Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Mysoft Ltd",
+      "url": "https://www.mysoftx3.com/",
+      "description": "Leading UK Sage partner for Sage X3 and Sage Intacct, serving the UK and North America."
+    },
+    "knowsAbout": [
+      "Sage X3",
+      "Sage Intacct",
+      "ERP selection",
+      "Finance transformation",
+      "Manufacturing and distribution ERP",
+      "Professional services automation",
+      "X3CloudDocs"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/-jamie-watts-/",
+      "https://www.mysoftx3.com/who-we-are/"
+    ]
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --bg: #e8e6e0;
@@ -22,11 +69,11 @@
       --text: #302a06;
       --text-muted: #302a0699;
       --border: #302a0620;
+      --border-solid: #302a0633;
+      --accent: #32292f;
     }
 
-    html, body {
-      height: 100%;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--bg);
@@ -34,6 +81,7 @@
       font-family: 'Fira Code', monospace;
       min-height: 100vh;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* Grain overlay */
@@ -47,24 +95,32 @@
       opacity: 0.6;
     }
 
+    ::selection { background: var(--title); color: var(--bg); }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--title);
+      color: var(--bg);
+      padding: 12px 20px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      z-index: 200;
+    }
+    .skip-link:focus { left: 0; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--title);
+      outline-offset: 3px;
+    }
+
     /* Layout */
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 48px;
-    }
+    .page { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
 
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 36px 0 0;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards;
-    }
-
-    .site-label {
+    .eyebrow {
       font-size: 11px;
       font-weight: 400;
       letter-spacing: 0.2em;
@@ -72,9 +128,51 @@
       color: var(--text-muted);
     }
 
+    .section { padding: 96px 0 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(26px, 3.4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--title);
+    }
+
+    .section-index { font-size: 11px; letter-spacing: 0.2em; color: var(--text-muted); white-space: nowrap; }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 36px 0 0;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .site-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    nav { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+
     .nav-link {
       font-size: 11px;
-      font-weight: 400;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -83,50 +181,30 @@
       transition: color 0.2s, border-color 0.2s;
     }
 
-    .nav-link:hover {
-      color: var(--title);
-      border-color: var(--title);
-    }
+    .nav-link:hover { color: var(--title); border-color: var(--title); }
 
     /* Hero */
-    .hero {
-      padding: 80px 0 0;
-    }
+    .hero { padding: 76px 0 0; }
 
-    .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease 0.15s forwards;
-    }
+    .hero-eyebrow { margin-bottom: 32px; opacity: 0; animation: fadeUp 0.6s ease 0.15s forwards; }
 
     .hero-name {
-      font-family: 'Aileron', 'Fira Code', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: clamp(64px, 10vw, 140px);
       font-weight: 700;
       line-height: 0.92;
       color: var(--title);
       letter-spacing: -0.03em;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.25s forwards;
-    }
-
-    /* Aileron fallback via Google Fonts alternative */
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
-    .hero-name {
-      font-family: 'DM Sans', sans-serif;
     }
 
     .hero-divider {
       width: 100%;
       height: 1px;
       background: var(--border);
-      margin-bottom: 48px;
+      margin-bottom: 44px;
       opacity: 0;
       animation: fadeUp 0.6s ease 0.35s forwards;
     }
@@ -140,14 +218,7 @@
       animation: fadeUp 0.6s ease 0.45s forwards;
     }
 
-    .hero-role {
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      line-height: 1.8;
-    }
-
+    .hero-role { font-size: 13px; letter-spacing: 0.05em; line-height: 1.8; }
     .hero-role span {
       display: block;
       font-size: 11px;
@@ -158,16 +229,234 @@
     }
 
     .hero-statement {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 300;
-      color: var(--text-muted);
+      color: var(--text);
       line-height: 1.9;
       grid-column: 2 / 4;
     }
+    .hero-statement strong { font-weight: 500; color: var(--title); }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.55s forwards;
+    }
 
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 26px;
+      border: 1px solid var(--title);
+      color: var(--title);
+      background: transparent;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+    .btn:hover { background: var(--title); color: var(--bg); transform: translateY(-2px); }
+    .btn .a { transition: transform 0.25s ease; }
+    .btn:hover .a { transform: translate(3px, -3px); }
 
-    /* Footer strip */
+    .btn-primary { background: var(--title); color: var(--bg); }
+    .btn-primary:hover { background: transparent; color: var(--title); }
+
+    /* Ticker */
+    .ticker {
+      margin-top: 64px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.65s forwards;
+    }
+    .ticker-inner { display: flex; gap: 64px; white-space: nowrap; animation: ticker 28s linear infinite; }
+    .ticker-item {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    .ticker-item .dot { color: var(--title); margin-right: 32px; }
+
+    /* Focus cards */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-solid); border: 1px solid var(--border-solid); }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      padding: 36px 32px 32px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.3s ease;
+      min-height: 100%;
+    }
+    .card:hover { background: #ded9d0; }
+
+    .card-tag { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 26px; }
+
+    .card-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--title);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .card-body { font-size: 13px; font-weight: 300; line-height: 1.85; color: var(--text); margin-bottom: 24px; }
+
+    .card-list { list-style: none; margin-bottom: 30px; }
+    .card-list li {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 7px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-cta {
+      margin-top: auto;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--title);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card:hover .card-cta .a { transform: translate(3px, -3px); }
+    .card-cta .a { transition: transform 0.25s ease; }
+
+    /* Argument section */
+    .argument { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+
+    .argument-lead {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: var(--title);
+      margin-bottom: 28px;
+    }
+
+    .argument p { font-size: 13px; font-weight: 300; line-height: 1.95; color: var(--text); margin-bottom: 20px; }
+
+    .cost-list { list-style: none; }
+    .cost-list li { border-top: 1px solid var(--border); padding: 18px 0; }
+    .cost-list li:last-child { border-bottom: 1px solid var(--border); }
+    .cost-list .q {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--title);
+      display: block;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+    .cost-list .a-note { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+
+    /* Resources */
+    .res-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-solid); border: 1px solid var(--border-solid); }
+
+    .res {
+      background: var(--bg);
+      padding: 28px 30px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: background 0.3s ease;
+    }
+    .res:hover { background: #ded9d0; }
+    .res-kind { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); }
+    .res-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--title);
+      letter-spacing: -0.01em;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+    }
+    .res-desc { font-size: 12px; font-weight: 300; line-height: 1.8; color: var(--text-muted); }
+    .res .a { transition: transform 0.25s ease; color: var(--title); }
+    .res:hover .a { transform: translate(3px, -3px); }
+
+    /* Proof strip */
+    .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .proof-item { border-top: 1px solid var(--border-solid); padding-top: 18px; }
+    .proof-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 700;
+      color: var(--title);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .proof-label { font-size: 11px; letter-spacing: 0.1em; line-height: 1.7; color: var(--text-muted); }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about p { font-size: 13px; font-weight: 300; line-height: 1.95; margin-bottom: 20px; }
+    .about .meta { list-style: none; }
+    .about .meta li {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 20px;
+      font-size: 12px;
+      padding: 14px 0;
+      border-top: 1px solid var(--border);
+      line-height: 1.7;
+    }
+    .about .meta li span:first-child { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); padding-top: 3px; }
+    .about .meta a { color: var(--title); text-decoration: none; border-bottom: 1px solid var(--border-solid); }
+    .about .meta a:hover { border-color: var(--title); }
+
+    /* CTA band */
+    .cta-band {
+      margin-top: 96px;
+      background: var(--title);
+      color: var(--bg);
+      padding: 64px 48px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .cta-band h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(26px, 3.4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+    .cta-band p { font-size: 13px; font-weight: 300; line-height: 1.9; opacity: 0.78; }
+    .cta-band .btn { border-color: var(--bg); color: var(--bg); }
+    .cta-band .btn:hover { background: var(--bg); color: var(--title); }
+    .cta-band .btn-primary { background: var(--bg); color: var(--title); }
+    .cta-band .btn-primary:hover { background: transparent; color: var(--bg); }
+    .cta-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+
+    /* Footer */
     .footer-strip {
       margin-top: 80px;
       padding: 32px 0 48px;
@@ -175,21 +464,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      opacity: 0;
-      animation: fadeUp 0.6s ease 0.75s forwards;
+      gap: 24px;
+      flex-wrap: wrap;
     }
-
-    .footer-left {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 32px;
-    }
-
+    .footer-left { font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; line-height: 1.8; }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
     .footer-links a {
       font-size: 11px;
       color: var(--text-muted);
@@ -199,92 +478,80 @@
       border-bottom: 1px solid transparent;
       transition: color 0.2s, border-color 0.2s;
     }
+    .footer-links a:hover { color: var(--title); border-color: var(--title); }
 
-    .footer-links a:hover {
-      color: var(--title);
-      border-color: var(--title);
-    }
-
-    /* Arrow motif */
-    .arrow {
-      display: inline-block;
-      color: var(--title);
-      font-size: 32px;
-      line-height: 1;
-      transform: rotate(0deg);
-      transition: transform 0.3s ease;
-    }
-
-    .arrow:hover {
-      transform: rotate(45deg);
-    }
-
-    /* Ticker bar */
-    .ticker {
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 0;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 0.6s ease 0.55s forwards;
-    }
-
-    .ticker-inner {
-      display: flex;
-      gap: 64px;
-      white-space: nowrap;
-      animation: ticker 20s linear infinite;
-    }
-
-    .ticker-item {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      flex-shrink: 0;
-    }
-
-    .ticker-item .dot {
-      color: var(--title);
-      margin-right: 32px;
-    }
-
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .cards { grid-template-columns: 1fr; }
+      .argument, .about { grid-template-columns: 1fr; gap: 40px; }
+      .proof { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .cta-band { grid-template-columns: 1fr; padding: 48px 32px; }
     }
 
     @media (max-width: 768px) {
       .page { padding: 0 24px; }
+      .hero { padding: 56px 0 0; }
       .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
       .hero-statement { grid-column: 1; }
+      .section { padding: 72px 0 0; }
+      .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .res-grid { grid-template-columns: 1fr; }
+      .footer-strip { flex-direction: column; align-items: flex-start; }
+      .about .meta li { grid-template-columns: 1fr; gap: 4px; }
+      nav { gap: 16px; flex-wrap: nowrap; }
+      .nav-desktop { display: none; }
+      .site-label { white-space: nowrap; font-size: 10px; letter-spacing: 0.12em; }
+      .nav-link { font-size: 10px; letter-spacing: 0.1em; white-space: nowrap; }
+      .hero-actions { gap: 12px; }
+      .btn { padding: 14px 20px; font-size: 10px; letter-spacing: 0.14em; }
+    }
 
-      .footer-strip { flex-direction: column; gap: 24px; align-items: flex-start; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .ticker-inner { animation: none; }
+      .reveal { opacity: 1; transform: none; }
+      header, .hero-eyebrow, .hero-name, .hero-divider, .hero-bottom, .hero-actions, .ticker { opacity: 1; }
+    }
+
+    @media print {
+      body::before { display: none; }
+      .ticker, .cta-band { display: none; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <div class="page">
 
     <header>
       <span class="site-label">jamie-watts.com</span>
-      <a href="https://www.linkedin.com/in/-jamie-watts-/" class="nav-link" target="_blank">LinkedIn ↗</a>
+      <nav>
+        <a href="#focus" class="nav-link nav-desktop">Focus</a>
+        <a href="#view" class="nav-link nav-desktop">Point of view</a>
+        <a href="#start" class="nav-link nav-desktop">Start here</a>
+        <a href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=nav" class="nav-link" rel="noopener">Talk to us &#8599;</a>
+        <a href="https://www.linkedin.com/in/-jamie-watts-/" class="nav-link" target="_blank" rel="me noopener">LinkedIn &#8599;</a>
+      </nav>
     </header>
 
+    <main id="main">
+
     <section class="hero">
-      <p class="hero-eyebrow">Managing Director &middot; ERP &amp; Technology</p>
+      <p class="hero-eyebrow eyebrow">Managing Director &middot; ERP &amp; Finance Technology &middot; UK &amp; North America</p>
 
       <h1 class="hero-name">Jamie<br>Watts</h1>
 
@@ -294,42 +561,328 @@
         <div class="hero-role">
           <span>Currently</span>
           MD, Mysoft Ltd<br>
-          Leading UK Sage Partner
+          Leading UK Sage Partner<br>
+          Sage X3 &middot; Sage Intacct
         </div>
         <p class="hero-statement">
-          Helping manufacturers, distributors and finance teams get more from their ERP.
-          Building the tools, teams and processes that make transformation stick.
+          I help finance leaders replace systems that have quietly become a constraint.
+          <strong>Sage X3</strong> for manufacturers, wholesalers and distributors.
+          <strong>Sage Intacct</strong> for finance, professional services, SaaS, legal and non-profit.
+          The work is rarely about software alone; it is about the teams, data and processes
+          that decide whether a transformation actually holds.
         </p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.mysoftx3.com/sage-intacct-vs-sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-primary" rel="noopener">Sage Intacct or Sage X3 <span class="a">&#8599;</span></a>
+        <a class="btn" href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-secondary" rel="noopener">Book a conversation <span class="a">&#8599;</span></a>
       </div>
     </section>
 
-    <div class="ticker">
+    <div class="ticker" aria-hidden="true">
       <div class="ticker-inner">
         <span class="ticker-item"><span class="dot">&#9632;</span> Sage X3</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Sage Intacct</span>
-        <span class="ticker-item"><span class="dot">&#9632;</span> ERP Strategy</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> X3CloudDocs</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> ERP Selection</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Finance Transformation</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Manufacturing &amp; Distribution</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Professional Services</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Sage X3</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Sage Intacct</span>
-        <span class="ticker-item"><span class="dot">&#9632;</span> ERP Strategy</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> X3CloudDocs</span>
+        <span class="ticker-item"><span class="dot">&#9632;</span> ERP Selection</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Finance Transformation</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Manufacturing &amp; Distribution</span>
         <span class="ticker-item"><span class="dot">&#9632;</span> Professional Services</span>
       </div>
     </div>
 
+    <!-- FOCUS -->
+    <section class="section reveal" id="focus">
+      <div class="section-head">
+        <h2 class="section-title">Where I spend my time</h2>
+        <span class="section-index">01 &mdash; Focus</span>
+      </div>
 
+      <div class="cards">
+
+        <a class="card" href="https://www.mysoftx3.com/what-we-do/sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=focus-x3" rel="noopener">
+          <span class="card-tag">Manufacturing &middot; Wholesale &middot; Distribution</span>
+          <h3 class="card-title">Sage X3</h3>
+          <p class="card-body">
+            Mid-market to enterprise ERP for businesses whose complexity has outgrown
+            their current system: multi-site, multi-company, multi-currency, real supply chains.
+          </p>
+          <ul class="card-list">
+            <li>Finance, distribution and manufacturing in one model</li>
+            <li>Multi-entity and international operations</li>
+            <li>Cloud or on-premise deployment</li>
+          </ul>
+          <span class="card-cta">Explore Sage X3 <span class="a">&#8599;</span></span>
+        </a>
+
+        <a class="card" href="https://www.mysoftx3.com/what-we-do/sage-intacct-solution/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=focus-intacct" rel="noopener">
+          <span class="card-tag">Finance &middot; Professional Services &middot; SaaS &middot; Legal &middot; Non-profit</span>
+          <h3 class="card-title">Sage Intacct</h3>
+          <p class="card-body">
+            Cloud-native financial management for CFOs who need a faster close, cleaner
+            consolidation and reporting that answers the question without a spreadsheet rebuild.
+          </p>
+          <ul class="card-list">
+            <li>Dimensional reporting and real-time insight</li>
+            <li>Multi-entity consolidation and revenue recognition</li>
+            <li>Project accounting and subscription billing</li>
+          </ul>
+          <span class="card-cta">Explore Sage Intacct <span class="a">&#8599;</span></span>
+        </a>
+
+        <a class="card" href="https://www.mysoftx3.com/what-we-do/x3clouddocs/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=focus-x3clouddocs" rel="noopener">
+          <span class="card-tag">Our own IP &middot; Built for Sage X3</span>
+          <h3 class="card-title">X3CloudDocs</h3>
+          <p class="card-body">
+            AI-driven document and process automation we built ourselves, now used across
+            six continents. It removes the manual handling that quietly consumes a finance team.
+          </p>
+          <ul class="card-list">
+            <li>Purchase invoice automation (PIA)</li>
+            <li>Sales order automation (SOA)</li>
+            <li>Document management and notifications (EDM, ENA)</li>
+          </ul>
+          <span class="card-cta">See X3CloudDocs <span class="a">&#8599;</span></span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- POINT OF VIEW -->
+    <section class="section reveal" id="view">
+      <div class="section-head">
+        <h2 class="section-title">The most expensive option<br>is usually to do nothing</h2>
+        <span class="section-index">02 &mdash; Point of view</span>
+      </div>
+
+      <div class="argument">
+        <div>
+          <p class="argument-lead">
+            Most finance leaders do not lose money on the ERP project they ran.
+            They lose it on the one they deferred.
+          </p>
+          <p>
+            Deferral feels prudent because its cost never lands on a single line of the P&amp;L.
+            It is spread across late closes, rekeyed data, workarounds that only one person
+            understands, and decisions made a fortnight after they were needed. None of it
+            appears on a business case, which is precisely why it survives.
+          </p>
+          <p>
+            My argument to a CFO is not that transformation is easy. It is that the
+            comparison is rarely stated honestly. Put a number against the status quo,
+            phase the change so it can be paused rather than abandoned, and the decision
+            becomes commercial rather than emotional.
+          </p>
+          <p>
+            That is also why we run vertical ERP-selection sessions rather than generic
+            demos. Buyers arrive with a live problem, and they leave with a comparison
+            they can defend to a board.
+          </p>
+        </div>
+
+        <ul class="cost-list">
+          <li>
+            <span class="q">How long does your month-end actually take?</span>
+            <span class="a-note">Not the reported figure. The point at which finance stops correcting it.</span>
+          </li>
+          <li>
+            <span class="q">How much of your finance team is rekeying?</span>
+            <span class="a-note">Invoice handling, order entry and reconciliation are usually the first things automation repays.</span>
+          </li>
+          <li>
+            <span class="q">What does a new entity, site or country cost you?</span>
+            <span class="a-note">If the answer is a project, the system is now a constraint on the growth plan.</span>
+          </li>
+          <li>
+            <span class="q">Who is the single point of failure?</span>
+            <span class="a-note">Most mid-market finance functions have one. Key-person risk is a system problem, not an HR one.</span>
+          </li>
+          <li>
+            <span class="q">Could you evidence your numbers under audit tomorrow?</span>
+            <span class="a-note">Compliance and reporting obligations keep tightening. Spreadsheet chains do not.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-actions" style="animation: none; opacity: 1;">
+        <a class="btn" href="https://www.mysoftx3.com/whitepapers-guides/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-guides" rel="noopener">Whitepapers &amp; guides <span class="a">&#8599;</span></a>
+        <a class="btn" href="https://www.mysoftx3.com/events/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-events" rel="noopener">Upcoming events <span class="a">&#8599;</span></a>
+      </div>
+    </section>
+
+    <!-- START HERE -->
+    <section class="section reveal" id="start">
+      <div class="section-head">
+        <h2 class="section-title">Start here</h2>
+        <span class="section-index">03 &mdash; Resources</span>
+      </div>
+
+      <div class="res-grid">
+
+        <a class="res" href="https://www.mysoftx3.com/sage-intacct-vs-sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-compare" rel="noopener">
+          <span class="res-kind">Comparison</span>
+          <span class="res-title">Sage Intacct vs Sage X3 <span class="a">&#8599;</span></span>
+          <span class="res-desc">The question I am asked most. Where each one fits, what it costs, and how to choose without a twelve-month evaluation.</span>
+        </a>
+
+        <a class="res" href="https://www.mysoftx3.com/webinars/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-webinars" rel="noopener">
+          <span class="res-kind">On demand</span>
+          <span class="res-title">Webinars &amp; demos <span class="a">&#8599;</span></span>
+          <span class="res-desc">Short, practical sessions run by our consultants. Watch a real system before you speak to anyone.</span>
+        </a>
+
+        <a class="res" href="https://www.mysoftx3.com/customers/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-customers" rel="noopener">
+          <span class="res-kind">Evidence</span>
+          <span class="res-title">Customer stories <span class="a">&#8599;</span></span>
+          <span class="res-desc">Businesses across the UK, US and Canada that made the change, and what it did for them.</span>
+        </a>
+
+        <a class="res" href="https://www.mysoftx3.com/industry-hub/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-industry" rel="noopener">
+          <span class="res-kind">By sector</span>
+          <span class="res-title">Industry hub <span class="a">&#8599;</span></span>
+          <span class="res-desc">Manufacturing, distribution, financial services, professional services, non-profit and legal.</span>
+        </a>
+
+        <a class="res" href="https://www.mysoftx3.com/content-hub/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-content" rel="noopener">
+          <span class="res-kind">Reading</span>
+          <span class="res-title">Content hub <span class="a">&#8599;</span></span>
+          <span class="res-desc">Articles on ERP selection, finance automation and getting more out of a system you already own.</span>
+        </a>
+
+        <a class="res" href="https://www.mysoftx3.com/who-we-are/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=res-about" rel="noopener">
+          <span class="res-kind">The team</span>
+          <span class="res-title">Who we are <span class="a">&#8599;</span></span>
+          <span class="res-desc">Twenty years as a Sage partner, and the consultants who do the actual work.</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- PROOF -->
+    <section class="section reveal" id="proof">
+      <div class="section-head">
+        <h2 class="section-title">Mysoft, in short</h2>
+        <span class="section-index">04 &mdash; Track record</span>
+      </div>
+
+      <div class="proof">
+        <div class="proof-item">
+          <div class="proof-num">20+</div>
+          <p class="proof-label">Years as a Sage business partner</p>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">2</div>
+          <p class="proof-label">Markets served directly: UK and North America</p>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">1st</div>
+          <p class="proof-label">The UK's first and longest-standing Sage X3 partner</p>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">6</div>
+          <p class="proof-label">Continents using X3CloudDocs, our own automation IP</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section reveal" id="about">
+      <div class="section-head">
+        <h2 class="section-title">About</h2>
+        <span class="section-index">05 &mdash; Background</span>
+      </div>
+
+      <div class="about">
+        <div>
+          <p>
+            I am Managing Director of <a href="https://www.mysoftx3.com/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=about-body" rel="noopener" style="color:var(--title);text-decoration:none;border-bottom:1px solid var(--border-solid);">Mysoft</a>,
+            a leading UK Sage partner. We implement and support Sage X3 and Sage Intacct for
+            organisations in the UK, the United States and Canada, and we build our own
+            automation software for Sage X3.
+          </p>
+          <p>
+            My interest is in the part of this work that is not technical. Selection processes
+            that stall. Business cases that never quantify the alternative. Implementations
+            that go live and then slowly decay because nobody owned them afterwards. Software
+            is the straightforward half.
+          </p>
+          <p>
+            I write about ERP selection, finance transformation and where automation genuinely
+            repays the investment. If any of that is live for you, LinkedIn is the fastest way
+            to reach me.
+          </p>
+        </div>
+
+        <ul class="meta">
+          <li><span>Role</span><span>Managing Director, Mysoft Ltd</span></li>
+          <li><span>Focus</span><span>Sage X3, Sage Intacct, X3CloudDocs</span></li>
+          <li><span>Sectors</span><span>Manufacturing, wholesale, distribution, financial and professional services, SaaS, legal, non-profit</span></li>
+          <li><span>Regions</span><span>United Kingdom &amp; North America</span></li>
+          <li><span>Connect</span><span><a href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">LinkedIn &#8599;</a></span></li>
+          <li><span>Company</span><span><a href="https://www.mysoftx3.com/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=about-meta" rel="noopener">mysoftx3.com &#8599;</a></span></li>
+        </ul>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- CTA -->
+    <section class="cta-band reveal" id="contact">
+      <div>
+        <h2>Worth a conversation?</h2>
+        <p>
+          If you are weighing up a change, comparing Sage Intacct against Sage X3, or trying
+          to work out whether your current system is genuinely holding you back, our team will
+          give you a straight answer. No obligation to proceed, and no theatre.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=cta-band-primary" rel="noopener">Contact Mysoft <span class="a">&#8599;</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">Connect with me <span class="a">&#8599;</span></a>
+      </div>
+    </section>
 
     <footer class="footer-strip">
-      <span class="footer-left">&copy; 2026 Jamie Watts</span>
+      <span class="footer-left">
+        &copy; 2026 Jamie Watts<br>
+        Managing Director, Mysoft Ltd &middot; UK &amp; North America
+      </span>
       <div class="footer-links">
-        <a href="https://mysoftx3.com" target="_blank">Mysoft</a>
-        <a href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank">LinkedIn</a>
+        <a href="https://www.mysoftx3.com/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-home" rel="noopener">Mysoft</a>
+        <a href="https://www.mysoftx3.com/what-we-do/sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-x3" rel="noopener">Sage X3</a>
+        <a href="https://www.mysoftx3.com/what-we-do/sage-intacct-solution/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-intacct" rel="noopener">Sage Intacct</a>
+        <a href="https://www.mysoftx3.com/what-we-do/x3clouddocs/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-x3cd" rel="noopener">X3CloudDocs</a>
+        <a href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-contact" rel="noopener">Contact</a>
+        <a href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">LinkedIn</a>
       </div>
     </footer>
 
   </div>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        els.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -12% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
