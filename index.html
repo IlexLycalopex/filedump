@@ -10,6 +10,10 @@
   <meta name="author" content="Jamie Watts">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#e8e6e0">
+  <!-- Guarantees the origin is sent as Referer on outbound clicks to mysoftx3.com.
+       This is the browser default, set explicitly so a host or header change cannot
+       silently break referral attribution in GA4 and Lead Forensics. -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="profile">
