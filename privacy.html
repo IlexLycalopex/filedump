@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--
+  Privacy note for jamie-watts.com.
+  Kept deliberately short and factual. Update it if either of these changes:
+    - the analytics tool (currently Cloudflare Web Analytics, cookieless)
+    - the outbound destination named in the "Links to other sites" section
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy | Jamie Watts</title>
+  <meta name="description" content="How jamie-watts.com handles data: cookieless analytics, no personal data collected, no advertising trackers.">
+  <link rel="canonical" href="https://www.jamie-watts.com/privacy.html">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#e8e6e0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e8e6e0'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%2332292f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #e8e6e0;
+      --title: #32292f;
+      --text: #302a06;
+      --text-muted: #302a0699;
+      --border: #302a0620;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.6;
+    }
+
+    ::selection { background: var(--title); color: var(--bg); }
+
+    a:focus-visible { outline: 2px solid var(--title); outline-offset: 3px; }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 0 48px 96px; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 36px 0 0;
+    }
+
+    .site-label, .nav-link {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .site-label { letter-spacing: 0.2em; }
+    .nav-link {
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-link:hover { color: var(--title); border-color: var(--title); }
+
+    h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(38px, 7vw, 64px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--title);
+      margin: 76px 0 20px;
+    }
+
+    .updated {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 44px;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--title);
+      margin: 44px 0 14px;
+    }
+
+    p, li { font-size: 13px; font-weight: 300; line-height: 1.95; }
+    p { margin-bottom: 16px; }
+
+    ul { margin: 0 0 16px 18px; }
+    li { margin-bottom: 8px; }
+
+    .lead { font-size: 14px; }
+
+    a.inline {
+      color: var(--title);
+      text-decoration: none;
+      border-bottom: 1px solid #302a0633;
+    }
+    a.inline:hover { border-color: var(--title); }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    footer span, footer a {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    footer a:hover { color: var(--title); }
+
+    @media (max-width: 768px) {
+      .page { padding: 0 24px 72px; }
+      h1 { margin-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <span class="site-label">jamie-watts.com</span>
+      <a class="nav-link" href="/">&#8592; Back</a>
+    </header>
+
+    <h1>Privacy</h1>
+    <span class="updated">Last updated 17 September 2026</span>
+
+    <p class="lead">
+      This is a personal site, and it is built to collect as little as possible.
+      There is no sign-up, no contact form and no advertising technology on it.
+      The short version: nothing here identifies you, and nothing is sold or shared.
+    </p>
+
+    <h2>Analytics</h2>
+    <p>
+      Visits are measured using Cloudflare Web Analytics. It is privacy-first and
+      does not use cookies, local storage or device fingerprinting, and it does not
+      track you across other websites. Because no information is stored on or read
+      from your device, and no personal data is collected, this site does not need
+      to ask you for cookie consent.
+    </p>
+    <p>
+      What is recorded is aggregate and not linked to an individual:
+    </p>
+    <ul>
+      <li>Pages viewed and number of visits</li>
+      <li>The referring site or search engine, where your browser provides one</li>
+      <li>Country, browser and device type</li>
+      <li>Page load performance</li>
+    </ul>
+
+    <h2>Cookies</h2>
+    <p>
+      This site sets no cookies of its own.
+    </p>
+
+    <h2>Fonts</h2>
+    <p>
+      Typefaces are loaded from Google Fonts, which means your browser makes a
+      request to Google to fetch them. That request carries your IP address, as any
+      web request does. Google's handling of it is covered by their own privacy
+      policy.
+    </p>
+
+    <h2>Links to other sites</h2>
+    <p>
+      Links from this site to
+      <a class="inline" href="https://www.mysoftx3.com/" rel="noopener">mysoftx3.com</a>
+      carry campaign tags in the web address, the <code>utm_</code> parameters you may
+      see after the question mark. These record only that a visit arrived from this
+      site and which link was used. They contain nothing about you personally.
+      Once you follow a link, that site's own privacy policy and cookie choices apply,
+      not this one.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      No personal data is collected here, so there is nothing held about you to
+      access, correct or erase. If you have a question about this note, the quickest
+      route is
+      <a class="inline" href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">LinkedIn</a>.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If the tools used on this site change, this note will be updated and the date
+      above revised.
+    </p>
+
+    <footer>
+      <span>&copy; 2026 Jamie Watts</span>
+      <a href="/">jamie-watts.com</a>
+    </footer>
+
+  </div>
+</body>
+</html>

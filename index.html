@@ -1,4 +1,40 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  jamie-watts.com
+  ============================================================================
+
+  This is a personal site. It is deliberately NOT integrated with any employer
+  system: no third-party analytics tag, no shared property, no cross-domain
+  measurement. Outbound attribution is carried entirely by UTM query strings,
+  which require nothing at the other end and leave nothing to unwind.
+
+  MAINTENANCE MODEL
+  -----------------
+  The page is built in two layers.
+
+    PERMANENT   Your name, positioning, point of view, About, Person schema.
+                This is the asset. It survives any change of employer.
+
+    SWAPPABLE   The commercial routing layer. Every block below is fenced with
+                  SWAPPABLE ... END SWAPPABLE
+                To repurpose the site, edit or delete only the fenced blocks.
+                Nothing outside a fence names a specific employer.
+
+  TO REPURPOSE
+  ------------
+    1. Search this file for "SWAPPABLE" and work through each fence in order.
+    2. Update the two employer references in <head>: the title / meta
+       description pair, and "worksFor" in the JSON-LD block.
+    3. Update the role line in the hero and in the About meta list.
+    4. Update privacy.html if the outbound destination changes.
+
+  ANALYTICS
+  ---------
+  Cloudflare Web Analytics. Cookieless, no personal data, no consent banner
+  required. See the beacon block at the end of body.
+  ============================================================================
+-->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -568,6 +604,7 @@
           Leading UK Sage Partner<br>
           Sage X3 &middot; Sage Intacct
         </div>
+        <!-- SWAPPABLE · employer-specific positioning copy -->
         <p class="hero-statement">
           I help finance leaders replace systems that have quietly become a constraint.
           <strong>Sage X3</strong> for manufacturers, wholesalers and distributors.
@@ -577,12 +614,17 @@
         </p>
       </div>
 
+      <!-- END SWAPPABLE · employer-specific positioning copy -->
+
+      <!-- SWAPPABLE · primary outbound CTAs -->
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://www.mysoftx3.com/sage-intacct-vs-sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-primary" rel="noopener">Sage Intacct or Sage X3 <span class="a">&#8599;</span></a>
         <a class="btn" href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=hero-secondary" rel="noopener">Book a conversation <span class="a">&#8599;</span></a>
       </div>
+      <!-- END SWAPPABLE · primary outbound CTAs -->
     </section>
 
+    <!-- SWAPPABLE · keyword ticker (employer product names) -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker-inner">
         <span class="ticker-item"><span class="dot">&#9632;</span> Sage X3</span>
@@ -602,7 +644,12 @@
       </div>
     </div>
 
-    <!-- FOCUS -->
+    <!-- END SWAPPABLE · keyword ticker -->
+
+    <!-- ======================================================================
+         SWAPPABLE · FOCUS. Entire section is employer product routing.
+         Delete wholesale, or replace the three cards with new offerings.
+         ====================================================================== -->
     <section class="section reveal" id="focus">
       <div class="section-head">
         <h2 class="section-title">Where I spend my time</h2>
@@ -659,7 +706,13 @@
       </div>
     </section>
 
-    <!-- POINT OF VIEW -->
+    <!-- END SWAPPABLE · FOCUS -->
+
+    <!-- ======================================================================
+         PERMANENT · POINT OF VIEW. This is yours, not the employer's. Keep it
+         through any repurpose; it is what the domain accrues authority on.
+         Only the CTA pair at the foot of the section is swappable.
+         ====================================================================== -->
     <section class="section reveal" id="view">
       <div class="section-head">
         <h2 class="section-title">The most expensive option<br>is usually to do nothing</h2>
@@ -715,13 +768,18 @@
         </ul>
       </div>
 
+      <!-- SWAPPABLE · outbound CTAs only. The prose above is permanent. -->
       <div class="hero-actions" style="animation: none; opacity: 1;">
         <a class="btn" href="https://www.mysoftx3.com/whitepapers-guides/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-guides" rel="noopener">Whitepapers &amp; guides <span class="a">&#8599;</span></a>
         <a class="btn" href="https://www.mysoftx3.com/events/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=pov-events" rel="noopener">Upcoming events <span class="a">&#8599;</span></a>
       </div>
+      <!-- END SWAPPABLE · outbound CTAs -->
     </section>
+    <!-- END PERMANENT · POINT OF VIEW -->
 
-    <!-- START HERE -->
+    <!-- ======================================================================
+         SWAPPABLE · RESOURCES. Six outbound tiles. Delete or re-point.
+         ====================================================================== -->
     <section class="section reveal" id="start">
       <div class="section-head">
         <h2 class="section-title">Start here</h2>
@@ -769,7 +827,11 @@
       </div>
     </section>
 
-    <!-- PROOF -->
+    <!-- END SWAPPABLE · RESOURCES -->
+
+    <!-- ======================================================================
+         SWAPPABLE · PROOF. Employer track record. Delete wholesale.
+         ====================================================================== -->
     <section class="section reveal" id="proof">
       <div class="section-head">
         <h2 class="section-title">Mysoft, in short</h2>
@@ -796,7 +858,12 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- END SWAPPABLE · PROOF -->
+
+    <!-- ======================================================================
+         PERMANENT · ABOUT. Keep. Update the employer references in the prose
+         and in the meta list on a change of role.
+         ====================================================================== -->
     <section class="section reveal" id="about">
       <div class="section-head">
         <h2 class="section-title">About</h2>
@@ -835,9 +902,14 @@
       </div>
     </section>
 
+    <!-- END PERMANENT · ABOUT -->
+
     </main>
 
-    <!-- CTA -->
+    <!-- ======================================================================
+         SWAPPABLE · CLOSING CTA. Entire band is employer conversion. Delete or
+         re-point to whatever the site should drive to next.
+         ====================================================================== -->
     <section class="cta-band reveal" id="contact">
       <div>
         <h2>Worth a conversation?</h2>
@@ -852,18 +924,22 @@
         <a class="btn" href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">Connect with me <span class="a">&#8599;</span></a>
       </div>
     </section>
+    <!-- END SWAPPABLE · CLOSING CTA -->
 
     <footer class="footer-strip">
       <span class="footer-left">
         &copy; 2026 Jamie Watts<br>
-        Managing Director, Mysoft Ltd &middot; UK &amp; North America
+        <!-- SWAPPABLE · role line -->Managing Director, Mysoft Ltd &middot; UK &amp; North America<!-- END SWAPPABLE -->
       </span>
       <div class="footer-links">
+        <!-- SWAPPABLE · employer footer links. Privacy and LinkedIn are permanent. -->
         <a href="https://www.mysoftx3.com/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-home" rel="noopener">Mysoft</a>
         <a href="https://www.mysoftx3.com/what-we-do/sage-x3/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-x3" rel="noopener">Sage X3</a>
         <a href="https://www.mysoftx3.com/what-we-do/sage-intacct-solution/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-intacct" rel="noopener">Sage Intacct</a>
         <a href="https://www.mysoftx3.com/what-we-do/x3clouddocs/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-x3cd" rel="noopener">X3CloudDocs</a>
         <a href="https://www.mysoftx3.com/contact-us/?utm_source=jamie-watts.com&amp;utm_medium=referral&amp;utm_campaign=personal-site&amp;utm_content=footer-contact" rel="noopener">Contact</a>
+        <!-- END SWAPPABLE · employer footer links -->
+        <a href="/privacy.html">Privacy</a>
         <a href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">LinkedIn</a>
       </div>
     </footer>
@@ -888,5 +964,39 @@
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
+
+  <!-- ==========================================================================
+       CLOUDFLARE WEB ANALYTICS
+       ==========================================================================
+       Cookieless and privacy-first: no cookies, no localStorage, no
+       fingerprinting, no cross-site tracking. No consent banner is required,
+       which is why this is used in preference to GA4 on this domain.
+
+       TWO WAYS TO ENABLE. Pick one, not both, or page views are counted twice.
+
+       A) AUTOMATIC (no code). Only works while the domain is proxied through
+          Cloudflare (orange cloud in DNS). Cloudflare injects the beacon for
+          you. Dashboard path:
+            Cloudflare > account > Analytics & Logs > Web Analytics
+            > Add a site > choose the jamie-watts.com zone > Automatic setup
+          If you use this, leave the snippet below commented out.
+
+       B) MANUAL (the snippet below). Works whether or not the domain is
+          proxied, and survives a move away from Cloudflare. In the same Web
+          Analytics screen choose Manual setup, copy the token it issues, paste
+          it below in place of PASTE_TOKEN_HERE, then uncomment the script tag.
+
+       Manual is the more portable of the two. It ships commented out so the
+       live site never serves a script carrying a placeholder token.
+
+       What this gives you: visits, page views, referrers, countries, devices
+       and Core Web Vitals for THIS domain. It does not record outbound link
+       clicks. Clicks through to the employer site are measured at the far end
+       via the utm_content value, which is unique per link slot.
+       ========================================================================== -->
+  <!--
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "PASTE_TOKEN_HERE"}'></script>
+  -->
 </body>
 </html>
