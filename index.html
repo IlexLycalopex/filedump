@@ -105,32 +105,96 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Structured data: ties this page to the Mysoft entity for search engines -->
+  <!-- ==========================================================================
+       STRUCTURED DATA
+       ==========================================================================
+       An @graph rather than a single node, so each entity gets a stable @id and
+       they reference each other. This is what lets a machine read "Jamie Watts
+       is Managing Director of Mysoft Ltd" as a fact about two linked entities
+       rather than a string on a page.
+
+       Mysoft is given its own Organization node, not just an inline value of
+       worksFor. An independent domain describing the Mysoft entity is a
+       corroborating source, which is the only real authority contribution this
+       page can make to Mysoft.
+
+       ACCURACY RULES, please keep to them:
+         - Never put an unverified URL in sameAs or url. A 404 in structured
+           data is worse than an omission; it weakens entity confidence.
+         - Never add a claim here that is not also supported on the page or
+           independently checkable. Schema is not a place to assert things the
+           prose will not.
+         - Keep dateModified current when the content changes. Freshness is a
+           weighted factor in AI retrieval pipelines.
+       ========================================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jamie Watts",
-    "url": "https://www.jamie-watts.com/",
-    "jobTitle": "Managing Director",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Mysoft Ltd",
-      "url": "https://www.mysoftx3.com/",
-      "description": "Leading UK Sage partner for Sage X3 and Sage Intacct, serving the UK and North America."
-    },
-    "knowsAbout": [
-      "Sage X3",
-      "Sage Intacct",
-      "ERP selection",
-      "Finance transformation",
-      "Manufacturing and distribution ERP",
-      "Professional services automation",
-      "X3CloudDocs"
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/in/-jamie-watts-/",
-      "https://www.mysoftx3.com/who-we-are/"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://www.jamie-watts.com/#page",
+        "url": "https://www.jamie-watts.com/",
+        "name": "Jamie Watts, Managing Director of Mysoft",
+        "inLanguage": "en-GB",
+        "isPartOf": { "@id": "https://www.jamie-watts.com/#website" },
+        "about": { "@id": "https://www.jamie-watts.com/#jamie" },
+        "mainEntity": { "@id": "https://www.jamie-watts.com/#jamie" },
+        "dateModified": "2026-09-18"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.jamie-watts.com/#website",
+        "url": "https://www.jamie-watts.com/",
+        "name": "Jamie Watts",
+        "inLanguage": "en-GB",
+        "publisher": { "@id": "https://www.jamie-watts.com/#jamie" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.jamie-watts.com/#jamie",
+        "name": "Jamie Watts",
+        "givenName": "Jamie",
+        "familyName": "Watts",
+        "url": "https://www.jamie-watts.com/",
+        "jobTitle": "Managing Director",
+        "description": "Managing Director of Mysoft Ltd, a UK Sage partner delivering Sage X3 and Sage Intacct to organisations in the UK and North America.",
+        "worksFor": { "@id": "https://www.mysoftx3.com/#organization" },
+        "knowsAbout": [
+          "Sage X3",
+          "Sage Intacct",
+          "X3CloudDocs",
+          "ERP selection",
+          "ERP implementation",
+          "Finance transformation",
+          "Manufacturing and distribution ERP",
+          "Wholesale and distribution ERP",
+          "Professional services automation",
+          "Multi-entity consolidation",
+          "Purchase invoice automation"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/-jamie-watts-/"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.mysoftx3.com/#organization",
+        "name": "Mysoft Ltd",
+        "url": "https://www.mysoftx3.com/",
+        "description": "A UK Sage partner specialising in Sage X3 for manufacturing, wholesale and distribution, and Sage Intacct for finance, professional services, SaaS, legal and non-profit organisations. Mysoft is the creator of X3CloudDocs, an automation suite for Sage X3.",
+        "areaServed": [
+          { "@type": "Country", "name": "United Kingdom" },
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "Canada" }
+        ],
+        "employee": { "@id": "https://www.jamie-watts.com/#jamie" },
+        "brand": {
+          "@type": "Brand",
+          "name": "X3CloudDocs",
+          "description": "Document and process automation for Sage X3, covering purchase invoice automation, sales order automation and document management."
+        }
+      }
     ]
   }
   </script>

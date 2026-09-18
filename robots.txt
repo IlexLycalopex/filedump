@@ -1,4 +1,70 @@
+# jamie-watts.com
+#
+# This site wants to be read, indexed, quoted and summarised. There is no
+# gated content and nothing to protect, so every crawler below is allowed
+# deliberately rather than by omission.
+#
+# IMPORTANT: robots.txt is only half the story. This domain sits behind
+# Cloudflare, and Cloudflare's AI Crawl Control blocks crawlers at the edge
+# before they ever read this file. Cloudflare changed its defaults on
+# 15 September 2026. If AI crawlers are blocked there, everything below is
+# ignored. Check: Cloudflare dashboard > Security > Bots > AI Crawl Control.
+
 User-agent: *
+Allow: /
+
+# --- Conventional search -------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- AI answer engines: retrieval and citation ---------------------------
+# These fetch a page so an assistant can quote it AND link back to it.
+# This is the category that produces referral traffic and attribution.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: meta-webindexer
+Allow: /
+
+# --- AI agents acting for a person ---------------------------------------
+# Someone has explicitly pointed an assistant at this page. Highest intent
+# traffic on the site; never block these.
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Model training ------------------------------------------------------
+# No traffic and no attribution from these, but they are how a person and a
+# company become known to a model in the first place. For a brand-building
+# page with nothing to monetise, that trade is worth taking. A publisher
+# selling content should reach the opposite conclusion.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://www.jamie-watts.com/sitemap.xml
