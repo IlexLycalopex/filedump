@@ -64,6 +64,21 @@
                                         (suspect this is now /our-story/,
                                          given customers moved under it)
 
+    NOT VERIFIED, ADDED 22 SEP 2026  (external, outside mysoftx3.com)
+      These were added on request to diversify the outbound profile. Neither
+      sage.com nor linkedin.com could be reached to confirm them, so treat
+      all three as unchecked until someone opens them:
+
+        https://www.sage.com/en-gb/sage-business-cloud/sage-x3/
+        https://www.sage.com/en-gb/products/sage-intacct/
+          ^ the UK Sage Intacct path is the least certain of the three; only
+            the en-us equivalent could be corroborated
+
+        https://www.linkedin.com/company/mysoft-ltd/
+          ^ also used in Organization sameAs in the JSON-LD. If this slug is
+            wrong, correct it in BOTH places or remove it from sameAs. A bad
+            URL in sameAs weakens entity confidence rather than helping it.
+
   LINK FOOTPRINT  (why the count is kept deliberately low)
   --------------------------------------------------------
   SEMrush Backlink Audit scored this domain 66 against mysoftx3.com on
@@ -206,6 +221,9 @@
           { "@type": "Country", "name": "Canada" }
         ],
         "employee": { "@id": "https://www.jamie-watts.com/#jamie" },
+        "sameAs": [
+          "https://www.linkedin.com/company/mysoft-ltd/"
+        ],
         "brand": {
           "@type": "Brand",
           "name": "X3CloudDocs",
@@ -495,6 +513,23 @@
     }
     .card:hover .card-cta .a { transform: translate(3px, -3px); }
     .card-cta .a { transition: transform 0.25s ease; }
+
+    /* Secondary reference line under the focus cards */
+    .also {
+      margin-top: 20px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      line-height: 2;
+    }
+    .also a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-solid);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .also a:hover { color: var(--title); border-color: var(--title); }
+    .also .sep { margin: 0 10px; opacity: 0.5; }
 
     /* Argument section */
     .argument { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
@@ -822,6 +857,21 @@
         </a>
 
       </div>
+
+      <!-- Outbound links to Sage themselves. Two reasons, both deliberate.
+           First, a reader comparing products should be able to reach the
+           vendor's own material without going through a partner; linking to
+           it signals confidence rather than losing the visit.
+           Second, footprint: a domain whose only external links point at one
+           commercial target is the shape SEMrush flagged. Linking out to
+           independent authoritative sources is what a genuine site does.
+           No UTM tags here; these are not measured destinations. -->
+      <p class="also">
+        Product information direct from Sage:
+        <a href="https://www.sage.com/en-gb/sage-business-cloud/sage-x3/" rel="noopener">Sage X3</a>
+        <span class="sep">&middot;</span>
+        <a href="https://www.sage.com/en-gb/products/sage-intacct/" rel="noopener">Sage Intacct</a>
+      </p>
     </section>
 
     <!-- END SWAPPABLE · FOCUS -->
@@ -1054,6 +1104,10 @@
              Do not reinstate a footer link block here. -->
         <a href="/privacy.html">Privacy</a>
         <a href="https://www.linkedin.com/in/-jamie-watts-/" target="_blank" rel="me noopener">LinkedIn</a>
+        <!-- SWAPPABLE · employer social. Different domain to mysoftx3.com, so
+             this does not add to the flagged link footprint. -->
+        <a href="https://www.linkedin.com/company/mysoft-ltd/" target="_blank" rel="noopener">Mysoft on LinkedIn</a>
+        <!-- END SWAPPABLE · employer social -->
       </div>
     </footer>
 
