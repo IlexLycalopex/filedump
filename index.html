@@ -120,6 +120,38 @@
   the certificate would fail to renew every three months once the proxy
   went back on. Not worth it.
 
+  CANONICAL HOSTNAME  (apex must redirect to www)
+  -----------------------------------------------
+  www.jamie-watts.com is canonical: it is what CNAME contains, what the
+  <link rel="canonical"> declares, and what every schema @id uses. The apex
+  jamie-watts.com must 301 to it, or the same content exists at two
+  hostnames and external links split between them. That fragmentation is
+  the likely reason SEMrush counted roughly twice as many backlinks as this
+  site actually has.
+
+  A Cloudflare Redirect Rule only fires if the request reaches Cloudflare,
+  which means the apex needs a PROXIED DNS record. If the apex has no
+  record at all the rule never runs, because the lookup fails first.
+
+    DNS: an A record for jamie-watts.com -> 192.0.2.1, PROXIED (orange).
+         192.0.2.1 is a reserved documentation address that goes nowhere
+         on purpose. Cloudflare answers at the edge and never contacts it,
+         so the hostname can only ever redirect and can never serve a
+         duplicate copy of the site.
+
+    Rules > Redirect Rules > Create rule
+      If:   http.host eq "jamie-watts.com"
+      Then: Dynamic redirect
+            concat("https://www.jamie-watts.com", http.request.uri.path)
+            Status 301, preserve query string ON
+
+  Use a DYNAMIC redirect, not a static one. A static redirect sends every
+  request to the homepage, so https://jamie-watts.com/privacy.html would
+  land on the front page instead of the privacy note. The concat above
+  keeps the path.
+
+  Set the two HTTPS settings below BEFORE adding this rule.
+
   ANALYTICS
   ---------
   Cloudflare Web Analytics. Cookieless, no personal data, no consent banner
