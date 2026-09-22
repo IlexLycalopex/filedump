@@ -96,6 +96,30 @@
   Google's index. Search Console and Bing Webmaster Tools submission is the
   fix for that one.
 
+  HTTPS  (why GitHub's "Enforce HTTPS" is off, and must stay off)
+  ---------------------------------------------------------------
+  GitHub Pages cannot issue a certificate for this domain while the DNS
+  record is proxied through Cloudflare, because it cannot see the records
+  it needs to validate. The "Enforce HTTPS" toggle in the GitHub Pages
+  settings is therefore greyed out. This is expected. Do not chase it.
+
+  HTTPS is enforced at the Cloudflare edge instead, which happens before a
+  request ever reaches GitHub:
+
+    SSL/TLS > Overview > encryption mode      = Full
+    SSL/TLS > Edge Certificates > Always Use HTTPS = On
+
+  Order matters. Set Full BEFORE enabling Always Use HTTPS. Flexible plus
+  Always Use HTTPS produces an infinite redirect loop, because Cloudflare
+  calls the origin over HTTP and the origin redirects back to HTTPS. Full
+  (strict) also fails here, since GitHub holds no valid certificate for
+  this domain while proxied. Full, and only Full.
+
+  Turning the proxy off would let GitHub issue a certificate, but it would
+  also disable AI Crawl Control and the automatic analytics injection, and
+  the certificate would fail to renew every three months once the proxy
+  went back on. Not worth it.
+
   ANALYTICS
   ---------
   Cloudflare Web Analytics. Cookieless, no personal data, no consent banner
